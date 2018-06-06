@@ -38,7 +38,7 @@
     (int_minus_int_is_int application-judgement "int" integers nil)
     (numfield nonempty-type-eq-decl nil number_fields nil)
     (- const-decl "[numfield, numfield -> numfield]" number_fields nil)
-    nil (nonneg_real nonempty-type-eq-decl nil real_types nil)
+    (nonneg_real nonempty-type-eq-decl nil real_types nil)
     (> const-decl "bool" reals nil)
     (posreal nonempty-type-eq-decl nil real_types nil)
     (above nonempty-type-eq-decl nil integers nil)
@@ -155,7 +155,7 @@
     (nat nonempty-type-eq-decl nil naturalnumbers nil)
     (below type-eq-decl nil nat_types nil)
     (fjnode type-decl nil fjnode_adt nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (finseq type-eq-decl nil finite_sequences nil)
     (posint_plus_nnint_is_posint application-judgement "posint"
@@ -175,7 +175,7 @@
     (number nonempty-type-decl nil numbers nil)
     (fjnode type-decl nil fjnode_adt nil)
     (PRED type-eq-decl nil defined_types nil)
-    (list type-decl nil list_adt nil) nil nil
+    (list type-decl nil list_adt nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -251,7 +251,7 @@
     (number nonempty-type-decl nil numbers nil)
     (fjnode type-decl nil fjnode_adt nil)
     (PRED type-eq-decl nil defined_types nil)
-    (list type-decl nil list_adt nil) nil nil
+    (list type-decl nil list_adt nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -334,7 +334,7 @@
     (number nonempty-type-decl nil numbers nil)
     (fjnode type-decl nil fjnode_adt nil)
     (PRED type-eq-decl nil defined_types nil)
-    (list type-decl nil list_adt nil) nil nil
+    (list type-decl nil list_adt nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -385,7 +385,7 @@
     (number_field nonempty-type-from-decl nil number_fields nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
     (PRED type-eq-decl nil defined_types nil)
     (bool nonempty-type-eq-decl nil booleans nil)
     (boolean nonempty-type-decl nil booleans nil)
@@ -459,7 +459,7 @@
     (below type-eq-decl nil nat_types nil)
     (fjnode type-decl nil fjnode_adt nil)
     (bool nonempty-type-eq-decl nil booleans nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -499,7 +499,7 @@
     (number nonempty-type-decl nil numbers nil)
     (NOT const-decl "[bool -> bool]" booleans nil)
     (bool nonempty-type-eq-decl nil booleans nil)
-    (boolean nonempty-type-decl nil booleans nil) nil
+    (boolean nonempty-type-decl nil booleans nil)
     (posint_plus_nnint_is_posint application-judgement "posint"
      integers nil))
    shostak))
@@ -549,7 +549,7 @@
     (below type-eq-decl nil nat_types nil)
     (finseqfj type-eq-decl nil fj nil)
     (finseq type-eq-decl nil finite_sequences nil)
-    (list type-decl nil list_adt nil) nil
+    (list type-decl nil list_adt nil)
     (PRED type-eq-decl nil defined_types nil)
     (fjnode type-decl nil fjnode_adt nil)
     (/ const-decl "[numfield, nznum -> numfield]" number_fields nil)
@@ -593,7 +593,7 @@
     (below type-eq-decl nil nat_types nil)
     (finseqfj type-eq-decl nil fj nil)
     (finseq type-eq-decl nil finite_sequences nil)
-    (list type-decl nil list_adt nil) nil
+    (list type-decl nil list_adt nil)
     (PRED type-eq-decl nil defined_types nil)
     (fjnode type-decl nil fjnode_adt nil)
     (/ const-decl "[numfield, nznum -> numfield]" number_fields nil)
@@ -653,7 +653,7 @@
     (NOT const-decl "[bool -> bool]" booleans nil)
     (number nonempty-type-decl nil numbers nil)
     (PRED type-eq-decl nil defined_types nil)
-    (fjnode type-decl nil fjnode_adt nil) nil
+    (fjnode type-decl nil fjnode_adt nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -677,7 +677,7 @@
     (below type-eq-decl nil nat_types nil)
     (smallerones adt-accessor-decl "[fjnode -> list[fjnode]]"
      fjnode_adt nil)
-    (length def-decl "nat" list_props nil) nil
+    (length def-decl "nat" list_props nil)
     (list type-decl nil list_adt nil) (< const-decl "bool" reals nil)
     (int_minus_int_is_int application-judgement "int" integers nil))
    shostak))
@@ -742,7 +742,7 @@
     (finseqfj type-eq-decl nil fj nil)
     (finseq type-eq-decl nil finite_sequences nil)
     (list type-decl nil list_adt nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
     (PRED type-eq-decl nil defined_types nil)
     (fjnode type-decl nil fjnode_adt nil)
     (nat nonempty-type-eq-decl nil naturalnumbers nil)
@@ -778,7 +778,7 @@
     (NOT const-decl "[bool -> bool]" booleans nil)
     (number nonempty-type-decl nil numbers nil)
     (fjnode type-decl nil fjnode_adt nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -800,7 +800,7 @@
     (/= const-decl "boolean" notequal nil)
     (below type-eq-decl nil nat_types nil)
     (< const-decl "bool" reals nil)
-    (^ const-decl "real" exponentiation nil) nil
+    (^ const-decl "real" exponentiation nil)
     (posnat_expt application-judgement "posnat" exponentiation nil)
     (posint_plus_nnint_is_posint application-judgement "posint"
      integers nil))
@@ -812,7 +812,7 @@
     (NOT const-decl "[bool -> bool]" booleans nil)
     (number nonempty-type-decl nil numbers nil)
     (fjnode type-decl nil fjnode_adt nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -833,7 +833,7 @@
     (OR const-decl "[bool, bool -> bool]" booleans nil)
     (/= const-decl "boolean" notequal nil)
     (below type-eq-decl nil nat_types nil)
-    (length def-decl "nat" list_props nil) nil
+    (length def-decl "nat" list_props nil)
     (< const-decl "bool" reals nil)
     (int_minus_int_is_int application-judgement "int" integers nil)
     (real_lt_is_strict_total_order name-judgement
@@ -846,7 +846,7 @@
     (posint_exp application-judgement "posint" exponentiation nil)
     (nnrat_div_posrat_is_nnrat application-judgement "nonneg_rat"
      rationals nil)
-    (odd? const-decl "bool" integers nil) nil
+    (odd? const-decl "bool" integers nil)
     (^ const-decl "real" exponentiation nil)
     (posnat_expt application-judgement "posnat" exponentiation nil)
     (nonneg_floor_is_nat application-judgement "nat" floor_ceil nil)
@@ -864,7 +864,7 @@
     (NOT const-decl "[bool -> bool]" booleans nil)
     (number nonempty-type-decl nil numbers nil)
     (fjnode type-decl nil fjnode_adt nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -894,7 +894,7 @@
     (listn_0 name-judgement "listn[fjnode[nat]](0)" fj nil)
     (real_ge_is_total_order name-judgement "(total_order?[real])"
      real_props nil)
-    (odd? const-decl "bool" integers nil) nil
+    (odd? const-decl "bool" integers nil)
     (^ const-decl "real" exponentiation nil)
     (posnat_expt application-judgement "posnat" exponentiation nil)
     (nonneg_floor_is_nat application-judgement "nat" floor_ceil nil)
@@ -920,7 +920,7 @@
     (integer_pred const-decl "[rational -> boolean]" integers nil)
     (rational nonempty-type-from-decl nil rationals nil)
     (rational_pred const-decl "[real -> boolean]" rationals nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
     (PRED type-eq-decl nil defined_types nil)
     (fjnode type-decl nil fjnode_adt nil)
     (> const-decl "bool" reals nil)
@@ -990,7 +990,7 @@
     (^ const-decl "real" exponentiation nil)
     (nnrat_div_posrat_is_nnrat application-judgement "nonneg_rat"
      rationals nil)
-    (expt def-decl "real" exponentiation nil) nil)
+    (expt def-decl "real" exponentiation nil))
    shostak))
  (comparePeservesElements 0
   (comparePeservesElements-1 nil 3719094149
@@ -1184,51 +1184,49 @@
         nil))
       nil))
     nil)
-   ((pred type-eq-decl nil defined_types nil)
-    (well_founded? const-decl "bool" orders nil)
-    (measure_induction formula-decl nil measure_induction nil)
-    (number nonempty-type-decl nil numbers nil)
-    (fjnode type-decl nil fjnode_adt nil)
-    (boolean nonempty-type-decl nil booleans nil)
-    (bool nonempty-type-eq-decl nil booleans nil)
-    (PRED type-eq-decl nil defined_types nil)
-    (every adt-def-decl "boolean" fjnode_adt nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil)
-    (number_field_pred const-decl "[number -> boolean]" number_fields
-     nil)
-    (number_field nonempty-type-from-decl nil number_fields nil)
-    (real_pred const-decl "[number_field -> boolean]" reals nil)
-    (real nonempty-type-from-decl nil reals nil)
-    (rational_pred const-decl "[real -> boolean]" rationals nil)
-    (rational nonempty-type-from-decl nil rationals nil)
-    (integer_pred const-decl "[rational -> boolean]" integers nil)
-    (>= const-decl "bool" reals nil)
-    (int nonempty-type-eq-decl nil integers nil)
-    (nat nonempty-type-eq-decl nil naturalnumbers nil)
-    (list type-decl nil list_adt nil)
-    (finseq type-eq-decl nil finite_sequences nil)
-    (finseqfj type-eq-decl nil fj nil)
-    (naturalnumber type-eq-decl nil naturalnumbers nil)
-    (< const-decl "bool" reals nil)
-    (wf_nat formula-decl nil naturalnumbers nil)
-    (permutation const-decl "bool" fj nil)
-    (seqfjBottleneck def-decl "finseqfj" fj nil)
-    (compare2to2 const-decl "finseqfj" fj nil)
-    (nnrat_div_posrat_is_nnrat application-judgement "nonneg_rat"
-     rationals nil)
-    (nonneg_floor_is_nat application-judgement "nat" floor_ceil nil)
-    (real_lt_is_strict_total_order name-judgement
-     "(strict_total_order?[real])" real_props nil)
-    (mult_divides2 application-judgement "(divides(m))" divides nil)
-    (mult_divides1 application-judgement "(divides(n))" divides nil)
-    (even_times_int_is_even application-judgement "even_int" integers
-     nil)
-    (nnint_times_nnint_is_nnint application-judgement "nonneg_int"
-     integers nil)
+   ((comparePeservesElements formula-decl nil fj nil)
+    (permutation_equiv formula-decl nil fj nil)
     (real_gt_is_strict_total_order name-judgement
      "(strict_total_order?[real])" real_props nil)
-    (permutation_equiv formula-decl nil fj nil)
-    (comparePeservesElements formula-decl nil fj nil))
+    (nnint_times_nnint_is_nnint application-judgement "nonneg_int"
+     integers nil)
+    (even_times_int_is_even application-judgement "even_int" integers
+     nil)
+    (mult_divides1 application-judgement "(divides(n))" divides nil)
+    (mult_divides2 application-judgement "(divides(m))" divides nil)
+    (real_lt_is_strict_total_order name-judgement
+     "(strict_total_order?[real])" real_props nil)
+    (nonneg_floor_is_nat application-judgement "nat" floor_ceil nil)
+    (nnrat_div_posrat_is_nnrat application-judgement "nonneg_rat"
+     rationals nil)
+    (compare2to2 const-decl "finseqfj" fj nil)
+    (seqfjBottleneck def-decl "finseqfj" fj nil)
+    (wf_nat formula-decl nil naturalnumbers nil)
+    (< const-decl "bool" reals nil)
+    (naturalnumber type-eq-decl nil naturalnumbers nil)
+    (finseqfj type-eq-decl nil fj nil)
+    (finseq type-eq-decl nil finite_sequences nil)
+    (list type-decl nil list_adt nil)
+    (nat nonempty-type-eq-decl nil naturalnumbers nil)
+    (int nonempty-type-eq-decl nil integers nil)
+    (>= const-decl "bool" reals nil)
+    (integer_pred const-decl "[rational -> boolean]" integers nil)
+    (rational nonempty-type-from-decl nil rationals nil)
+    (rational_pred const-decl "[real -> boolean]" rationals nil)
+    (real nonempty-type-from-decl nil reals nil)
+    (real_pred const-decl "[number_field -> boolean]" reals nil)
+    (number_field nonempty-type-from-decl nil number_fields nil)
+    (number_field_pred const-decl "[number -> boolean]" number_fields
+     nil)
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (PRED type-eq-decl nil defined_types nil)
+    (bool nonempty-type-eq-decl nil booleans nil)
+    (boolean nonempty-type-decl nil booleans nil)
+    (fjnode type-decl nil fjnode_adt nil)
+    (number nonempty-type-decl nil numbers nil)
+    (measure_induction formula-decl nil measure_induction nil)
+    (well_founded? const-decl "bool" orders nil)
+    (pred type-eq-decl nil defined_types nil))
    shostak))
  (oneStepCorrectionER_TCC1 0
   (oneStepCorrectionER_TCC1-1 nil 3718705741
@@ -1243,7 +1241,7 @@
     (finseqfj type-eq-decl nil fj nil)
     (finseq type-eq-decl nil finite_sequences nil)
     (list type-decl nil list_adt nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
     (PRED type-eq-decl nil defined_types nil)
     (fjnode type-decl nil fjnode_adt nil)
     (nat nonempty-type-eq-decl nil naturalnumbers nil)
@@ -1288,7 +1286,7 @@
     (NOT const-decl "[bool -> bool]" booleans nil)
     (number nonempty-type-decl nil numbers nil)
     (fjnode type-decl nil fjnode_adt nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -1321,7 +1319,7 @@
      "(strict_total_order?[real])" real_props nil)
     (nstructER? const-decl "bool" fj nil)
     (odd? const-decl "bool" integers nil)
-    (^ const-decl "real" exponentiation nil) nil
+    (^ const-decl "real" exponentiation nil)
     (posint_exp application-judgement "posint" exponentiation nil)
     (posnat_expt application-judgement "posnat" exponentiation nil)
     (nonneg_floor_is_nat application-judgement "nat" floor_ceil nil)
@@ -2017,7 +2015,7 @@
     (fjnode type-decl nil fjnode_adt nil)
     (boolean nonempty-type-decl nil booleans nil)
     (bool nonempty-type-eq-decl nil booleans nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -2032,7 +2030,7 @@
     (nat nonempty-type-eq-decl nil naturalnumbers nil)
     (list type-decl nil list_adt nil)
     (finseq type-eq-decl nil finite_sequences nil)
-    (finseqfj type-eq-decl nil fj nil) nil
+    (finseqfj type-eq-decl nil fj nil)
     (listn_0 name-judgement "listn[fjnode[nat]](0)" fj nil)
     (nnint_plus_nnint_is_nnint application-judgement "nonneg_int"
      integers nil)
@@ -2081,7 +2079,7 @@
      nil)
     (nnint_times_nnint_is_nnint application-judgement "nonneg_int"
      integers nil)
-    (nstruct? def-decl "boolean" fj nil) nil
+    (nstruct? def-decl "boolean" fj nil)
     (smallerones adt-accessor-decl "[fjnode -> list[fjnode]]"
      fjnode_adt nil)
     (nth def-decl "T" list_props nil)
@@ -2094,13 +2092,13 @@
     (IMPLIES const-decl "[bool, bool -> bool]" booleans nil)
     (val adt-accessor-decl "[fjnode -> T]" fjnode_adt nil)
     (* const-decl "[numfield, numfield -> numfield]" number_fields nil)
-    nil (below type-eq-decl nil nat_types nil) nil
+    (below type-eq-decl nil nat_types nil)
     (odd_plus_even_is_odd application-judgement "odd_int" integers nil)
-    (length_odd def-decl "nat" fj nil) nil
+    (length_odd def-decl "nat" fj nil)
     (below_induction formula-decl nil bounded_nat_inductions nil)
     (below type-eq-decl nil naturalnumbers nil)
-    (pred type-eq-decl nil defined_types nil) nil nil nil nil
-    (odd? const-decl "bool" integers nil) nil
+    (pred type-eq-decl nil defined_types nil)
+    (odd? const-decl "bool" integers nil)
     (nnrat_exp application-judgement "nnrat" exponentiation nil)
     (posrat_exp application-judgement "posrat" exponentiation nil)
     (nstructER? const-decl "bool" fj nil)
@@ -2926,7 +2924,7 @@
     (logb const-decl "nat" fj nil)
     (above nonempty-type-eq-decl nil integers nil)
     (fjnode type-decl nil fjnode_adt nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (list type-decl nil list_adt nil)
     (finseq type-eq-decl nil finite_sequences nil)
@@ -3001,7 +2999,7 @@
     (number_field nonempty-type-from-decl nil number_fields nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
     (PRED type-eq-decl nil defined_types nil)
     (fjnode type-decl nil fjnode_adt nil)
     (number nonempty-type-decl nil numbers nil)
@@ -3340,7 +3338,7 @@
     (fjnode type-decl nil fjnode_adt nil)
     (boolean nonempty-type-decl nil booleans nil)
     (bool nonempty-type-eq-decl nil booleans nil)
-    (PRED type-eq-decl nil defined_types nil) nil
+    (PRED type-eq-decl nil defined_types nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
@@ -3362,7 +3360,7 @@
     (^ const-decl "real" exponentiation nil)
     (/= const-decl "boolean" notequal nil)
     (OR const-decl "[bool, bool -> bool]" booleans nil)
-    (<= const-decl "bool" reals nil) nil
+    (<= const-decl "bool" reals nil)
     (plain_finseqfj const-decl "bool" fj nil)
     (logb const-decl "nat" fj nil)
     (above nonempty-type-eq-decl nil integers nil)
@@ -3409,12 +3407,12 @@
     (posreal nonempty-type-eq-decl nil real_types nil)
     (NOT const-decl "[bool -> bool]" booleans nil)
     (oneStepCorrectionER formula-decl nil fj nil)
-    (both_sides_expt_gt1_le formula-decl nil exponentiation nil) nil
+    (both_sides_expt_gt1_le formula-decl nil exponentiation nil)
     (nnint_plus_posint_is_posint application-judgement "posint"
      integers nil)
     (nnint_times_nnint_is_nnint application-judgement "nonneg_int"
      integers nil)
-    nil (compare2to2 const-decl "finseqfj" fj nil))
+    (compare2to2 const-decl "finseqfj" fj nil))
    shostak))
  (strucutural_correctionFP_TCC1 0
   (strucutural_correctionFP_TCC1-1 nil 3735039253
@@ -3452,7 +3450,7 @@
     (number_field nonempty-type-from-decl nil number_fields nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
     (PRED type-eq-decl nil defined_types nil)
     (bool nonempty-type-eq-decl nil booleans nil)
     (fjnode type-decl nil fjnode_adt nil)
@@ -3462,29 +3460,41 @@
    nil))
  (strucutural_correctionFP 0
   (strucutural_correctionFP-1 nil 3735039255
-   ("" (skeep) (("" (postpone) nil nil)) nil)
+   ("" (skeep)
+    (("" (skeep)
+      (("" (lemma "correctionER")
+        (("" (inst?)
+          (("" (inst -1 "s0")
+            (("" (beta)
+              (("" (split)
+                (("1" (propax) nil nil)
+                 ("2" (inst 1 "0")
+                  (("1" (lemma "plain_finseqfj_nstructER0")
+                    (("1" (inst?)
+                      (("1" (split)
+                        (("1" (propax) nil nil) ("2" (assert) nil nil))
+                        nil))
+                      nil))
+                    nil)
+                   ("2" (assert) nil nil))
+                  nil))
+                nil))
+              nil))
+            nil))
+          nil))
+        nil))
+      nil))
+    nil)
    ((correctionER formula-decl nil fj nil)
+    (plain_finseqfj_nstructER0 formula-decl nil fj nil)
+    (<= const-decl "bool" reals nil)
+    (above nonempty-type-eq-decl nil integers nil)
+    (logb const-decl "nat" fj nil)
+    (s0 skolem-const-decl
+     "{s0: finseqfj | plain_finseqfj(s0) AND s0`seqfj`length > 0}" fj
+     nil)
     (real_le_is_total_order name-judgement "(total_order?[real])"
      real_props nil)
-    (logb const-decl "nat" fj nil)
-    (above nonempty-type-eq-decl nil integers nil)
-    (<= const-decl "bool" reals nil)
-    (plain_finseqfj_nstructER0 formula-decl nil fj nil)
-    (= const-decl "[T, T -> boolean]" equalities nil)
-    (real_gt_is_strict_total_order name-judgement
-     "(strict_total_order?[real])" real_props nil)
-    (real_ge_is_total_order name-judgement "(total_order?[real])"
-     real_props nil)
-    (log_nat def-decl "[n: nat, {y | y < p AND x = p ^ n * y}]" log_nat
-     "reals/")
-    (^ const-decl "real" exponentiation nil)
-    (/= const-decl "boolean" notequal nil)
-    (OR const-decl "[bool, bool -> bool]" booleans nil)
-    (* const-decl "[numfield, numfield -> numfield]" number_fields nil)
-    (numfield nonempty-type-eq-decl nil number_fields nil)
-    (< const-decl "bool" reals nil)
-    (posint_exp application-judgement "posint" exponentiation nil)
-    (NOT const-decl "[bool -> bool]" booleans nil)
     (> const-decl "bool" reals nil)
     (plain_finseqfj const-decl "bool" fj nil)
     (finseqfj type-eq-decl nil fj nil)
@@ -3502,6 +3512,7 @@
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
+    (every adt-def-decl "boolean" fjnode_adt nil)
     (PRED type-eq-decl nil defined_types nil)
     (bool nonempty-type-eq-decl nil booleans nil)
     (boolean nonempty-type-decl nil booleans nil)
@@ -3613,7 +3624,7 @@
       nil))
     nil)
    ((correctionER formula-decl nil fj nil)
-    (<= const-decl "bool" reals nil) nil nil
+    (<= const-decl "bool" reals nil)
     (both_sides_expt_gt1_lt formula-decl nil exponentiation nil)
     (posint_exp application-judgement "posint" exponentiation nil)
     (nonneg_floor_is_nat application-judgement "nat" floor_ceil nil)
@@ -3674,7 +3685,7 @@
     (number_field nonempty-type-from-decl nil number_fields nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
     (PRED type-eq-decl nil defined_types nil)
     (bool nonempty-type-eq-decl nil booleans nil)
     (boolean nonempty-type-decl nil booleans nil)
@@ -3749,7 +3760,7 @@
     (number_field nonempty-type-from-decl nil number_fields nil)
     (number_field_pred const-decl "[number -> boolean]" number_fields
      nil)
-    (AND const-decl "[bool, bool -> bool]" booleans nil) nil
+    (AND const-decl "[bool, bool -> bool]" booleans nil)
     (PRED type-eq-decl nil defined_types nil)
     (bool nonempty-type-eq-decl nil booleans nil)
     (fjnode type-decl nil fjnode_adt nil)
@@ -3758,7 +3769,7 @@
     (number nonempty-type-decl nil numbers nil)
     (real_gt_is_strict_total_order name-judgement
      "(strict_total_order?[real])" real_props nil)
-    nil (is_sorted? const-decl "bool" fj nil)
+    (is_sorted? const-decl "bool" fj nil)
     (seqfjBottleneck def-decl "finseqfj" fj nil)
     (correctionER formula-decl nil fj nil)
     (logb const-decl "nat" fj nil)
@@ -3773,7 +3784,7 @@
     (OR const-decl "[bool, bool -> bool]" booleans nil)
     (/= const-decl "boolean" notequal nil)
     (^ const-decl "real" exponentiation nil)
-    (> const-decl "bool" reals nil) nil
+    (> const-decl "bool" reals nil)
     (plain_finseqfj const-decl "bool" fj nil)
     (real_le_is_total_order name-judgement "(total_order?[real])"
      real_props nil)
