@@ -17,153 +17,100 @@ fjnode_adt[T: TYPE]: THEORY
 
   fjnode_ord: [fjnode -> upto(0)]
 
-  fjnode_ord_defaxiom: AXIOM
-    FORALL (val: T, smallerones: list[fjnode], a?: boolean):
-      fjnode_ord(consFjnode(val, smallerones, a?)) = 0;
+  fjnode_ord_defaxiom: AXIOM FORALL (val: T, smallerones: list[fjnode], a?: boolean): fjnode_ord(consFjnode(val, smallerones, a?)) = 0;
 
-  ord(x: fjnode): [fjnode -> upto(0)] =
-      CASES x
-        OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var): 0
-        ENDCASES
+  ord(x: fjnode): [fjnode -> upto(0)] = CASES x OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var): 0 ENDCASES
 
   fjnode_consFjnode_extensionality: AXIOM
-    FORALL (consFjnode?_var: (consFjnode?),
-            consFjnode?_var2: (consFjnode?)):
+    FORALL (consFjnode?_var: (consFjnode?), consFjnode?_var2: (consFjnode?)):
       val(consFjnode?_var) = val(consFjnode?_var2) AND
-       smallerones(consFjnode?_var) = smallerones(consFjnode?_var2) AND
-        a?(consFjnode?_var) = a?(consFjnode?_var2)
+       smallerones(consFjnode?_var) = smallerones(consFjnode?_var2) AND a?(consFjnode?_var) = a?(consFjnode?_var2)
        IMPLIES consFjnode?_var = consFjnode?_var2;
 
   fjnode_consFjnode_eta: AXIOM
     FORALL (consFjnode?_var: (consFjnode?)):
-      consFjnode(val(consFjnode?_var), smallerones(consFjnode?_var),
-                 a?(consFjnode?_var))
-       = consFjnode?_var;
+      consFjnode(val(consFjnode?_var), smallerones(consFjnode?_var), a?(consFjnode?_var)) = consFjnode?_var;
 
   fjnode_val_consFjnode: AXIOM
-    FORALL (consFjnode1_var: T, consFjnode2_var: list[fjnode],
-            consFjnode3_var: boolean):
-      val(consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var)) =
-       consFjnode1_var;
+    FORALL (consFjnode1_var: T, consFjnode2_var: list[fjnode], consFjnode3_var: boolean):
+      val(consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var)) = consFjnode1_var;
 
   fjnode_smallerones_consFjnode: AXIOM
-    FORALL (consFjnode1_var: T, consFjnode2_var: list[fjnode],
-            consFjnode3_var: boolean):
-      smallerones(consFjnode(consFjnode1_var, consFjnode2_var,
-                             consFjnode3_var))
-       = consFjnode2_var;
+    FORALL (consFjnode1_var: T, consFjnode2_var: list[fjnode], consFjnode3_var: boolean):
+      smallerones(consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var)) = consFjnode2_var;
 
   fjnode_a?_consFjnode: AXIOM
-    FORALL (consFjnode1_var: T, consFjnode2_var: list[fjnode],
-            consFjnode3_var: boolean):
-      a?(consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var)) =
-       consFjnode3_var;
+    FORALL (consFjnode1_var: T, consFjnode2_var: list[fjnode], consFjnode3_var: boolean):
+      a?(consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var)) = consFjnode3_var;
 
-  fjnode_inclusive: AXIOM
-    FORALL (fjnode_var: fjnode): consFjnode?(fjnode_var);
+  fjnode_inclusive: AXIOM FORALL (fjnode_var: fjnode): consFjnode?(fjnode_var);
 
   fjnode_induction: AXIOM
     FORALL (p: [fjnode -> boolean]):
-      (FORALL (consFjnode1_var: T, consFjnode2_var: list[fjnode],
-               consFjnode3_var: boolean):
-         every(p)(consFjnode2_var) IMPLIES
-          p(consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var)))
+      (FORALL (consFjnode1_var: T, consFjnode2_var: list[fjnode], consFjnode3_var: boolean):
+         every(p)(consFjnode2_var) IMPLIES p(consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var)))
        IMPLIES (FORALL (fjnode_var: fjnode): p(fjnode_var));
 
   every(p: PRED[T])(a: fjnode):  boolean =
-      CASES a
-        OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
-             p(consFjnode1_var) AND
-              every[fjnode](every(p))(consFjnode2_var)
+      CASES a OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var): p(consFjnode1_var) AND every[fjnode](every(p))(consFjnode2_var)
         ENDCASES;
 
   every(p: PRED[T], a: fjnode):  boolean =
-      CASES a
-        OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
-             p(consFjnode1_var) AND
-              every[fjnode](every(p), consFjnode2_var)
+      CASES a OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var): p(consFjnode1_var) AND every[fjnode](every(p), consFjnode2_var)
         ENDCASES;
 
   some(p: PRED[T])(a: fjnode):  boolean =
-      CASES a
-        OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
-             p(consFjnode1_var) OR some[fjnode](some(p))(consFjnode2_var)
+      CASES a OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var): p(consFjnode1_var) OR some[fjnode](some(p))(consFjnode2_var)
         ENDCASES;
 
   some(p: PRED[T], a: fjnode):  boolean =
-      CASES a
-        OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
-             p(consFjnode1_var) OR some[fjnode](some(p), consFjnode2_var)
+      CASES a OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var): p(consFjnode1_var) OR some[fjnode](some(p), consFjnode2_var)
         ENDCASES;
 
   subterm(x: fjnode, y: fjnode):  boolean =
       x = y OR
        CASES y
-         OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
-              some[fjnode]
-                  ((LAMBDA (z: fjnode): subterm(x, z)))(consFjnode2_var)
+         OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var): some[fjnode]((LAMBDA (z: fjnode): subterm(x, z)))(consFjnode2_var)
          ENDCASES;
 
   <<:  (strict_well_founded?[fjnode]) =
       LAMBDA (x, y: fjnode):
         CASES y
-          OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
-               some[fjnode]
-                   (LAMBDA (z: fjnode): x = z OR x << z)(consFjnode2_var)
+          OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var): some[fjnode](LAMBDA (z: fjnode): x = z OR x << z)(consFjnode2_var)
           ENDCASES;
 
   fjnode_well_founded: AXIOM strict_well_founded?[fjnode](<<);
 
-  reduce_nat(consFjnode?_fun: [[T, list[nat], boolean] -> nat]):
-        [fjnode -> nat] =
+  reduce_nat(consFjnode?_fun: [[T, list[nat], boolean] -> nat]):  [fjnode -> nat] =
       LAMBDA (fjnode_adtvar: fjnode):
         LET red: [fjnode -> nat] = reduce_nat(consFjnode?_fun) IN
           CASES fjnode_adtvar
-            OF consFjnode(consFjnode1_var, consFjnode2_var,
-                          consFjnode3_var):
-                 consFjnode?_fun(consFjnode1_var,
-                                 map[fjnode, nat](red)(consFjnode2_var),
-                                 consFjnode3_var)
+            OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
+                 consFjnode?_fun(consFjnode1_var, map[fjnode, nat](red)(consFjnode2_var), consFjnode3_var)
             ENDCASES;
 
-  REDUCE_nat(consFjnode?_fun: [[T, list[nat], boolean, fjnode] -> nat]):
-        [fjnode -> nat] =
+  REDUCE_nat(consFjnode?_fun: [[T, list[nat], boolean, fjnode] -> nat]):  [fjnode -> nat] =
       LAMBDA (fjnode_adtvar: fjnode):
         LET red: [fjnode -> nat] = REDUCE_nat(consFjnode?_fun) IN
           CASES fjnode_adtvar
-            OF consFjnode(consFjnode1_var, consFjnode2_var,
-                          consFjnode3_var):
-                 consFjnode?_fun(consFjnode1_var,
-                                 map[fjnode, nat](red)(consFjnode2_var),
-                                 consFjnode3_var, fjnode_adtvar)
+            OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
+                 consFjnode?_fun(consFjnode1_var, map[fjnode, nat](red)(consFjnode2_var), consFjnode3_var, fjnode_adtvar)
             ENDCASES;
 
-  reduce_ordinal(consFjnode?_fun:
-                   [[T, list[ordinal], boolean] -> ordinal]):
-        [fjnode -> ordinal] =
+  reduce_ordinal(consFjnode?_fun: [[T, list[ordinal], boolean] -> ordinal]):  [fjnode -> ordinal] =
       LAMBDA (fjnode_adtvar: fjnode):
         LET red: [fjnode -> ordinal] = reduce_ordinal(consFjnode?_fun) IN
           CASES fjnode_adtvar
-            OF consFjnode(consFjnode1_var, consFjnode2_var,
-                          consFjnode3_var):
-                 consFjnode?_fun(consFjnode1_var,
-                                 map[fjnode, ordinal]
-                                     (red)(consFjnode2_var),
-                                 consFjnode3_var)
+            OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
+                 consFjnode?_fun(consFjnode1_var, map[fjnode, ordinal](red)(consFjnode2_var), consFjnode3_var)
             ENDCASES;
 
-  REDUCE_ordinal(consFjnode?_fun:
-                   [[T, list[ordinal], boolean, fjnode] -> ordinal]):
-        [fjnode -> ordinal] =
+  REDUCE_ordinal(consFjnode?_fun: [[T, list[ordinal], boolean, fjnode] -> ordinal]):  [fjnode -> ordinal] =
       LAMBDA (fjnode_adtvar: fjnode):
         LET red: [fjnode -> ordinal] = REDUCE_ordinal(consFjnode?_fun) IN
           CASES fjnode_adtvar
-            OF consFjnode(consFjnode1_var, consFjnode2_var,
-                          consFjnode3_var):
-                 consFjnode?_fun(consFjnode1_var,
-                                 map[fjnode, ordinal]
-                                     (red)(consFjnode2_var),
-                                 consFjnode3_var, fjnode_adtvar)
+            OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
+                 consFjnode?_fun(consFjnode1_var, map[fjnode, ordinal](red)(consFjnode2_var), consFjnode3_var, fjnode_adtvar)
             ENDCASES;
  END fjnode_adt
 
@@ -175,26 +122,18 @@ fjnode_adt_map[T: TYPE, T1: TYPE]: THEORY
   map(f: [T -> T1])(a: fjnode[T]):  fjnode[T1] =
       CASES a
         OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
-             consFjnode(f(consFjnode1_var),
-                        map[fjnode[T], fjnode[T1]]
-                            (map(f))(consFjnode2_var),
-                        consFjnode3_var)
+             consFjnode(f(consFjnode1_var), map[fjnode[T], fjnode[T1]](map(f))(consFjnode2_var), consFjnode3_var)
         ENDCASES;
 
   map(f: [T -> T1], a: fjnode[T]):  fjnode[T1] =
       CASES a
         OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
-             consFjnode(f(consFjnode1_var),
-                        map[fjnode[T], fjnode[T1]]
-                            (map(f), consFjnode2_var),
-                        consFjnode3_var)
+             consFjnode(f(consFjnode1_var), map[fjnode[T], fjnode[T1]](map(f), consFjnode2_var), consFjnode3_var)
         ENDCASES;
 
   every(R: [[T, T1] -> boolean])(x: fjnode[T], y: fjnode[T1]):  boolean =
            consFjnode?(x) AND consFjnode?(y) AND R(val(x), val(y))
-       AND every(LAMBDA (u: fjnode[T], v: fjnode[T1]): every(R)(u, v))
-                (smallerones(x), smallerones(y))
-       AND a?(x) = a?(y);
+       AND every(LAMBDA (u: fjnode[T], v: fjnode[T1]): every(R)(u, v))(smallerones(x), smallerones(y)) AND a?(x) = a?(y);
  END fjnode_adt_map
 
 fjnode_adt_reduce[T: TYPE, range: TYPE]: THEORY
@@ -202,30 +141,19 @@ fjnode_adt_reduce[T: TYPE, range: TYPE]: THEORY
 
   IMPORTING fjnode_adt[T]
 
-  reduce(consFjnode?_fun: [[T, list[range], boolean] -> range]):
-        [fjnode[T] -> range] =
+  reduce(consFjnode?_fun: [[T, list[range], boolean] -> range]):  [fjnode[T] -> range] =
       LAMBDA (fjnode_adtvar: fjnode[T]):
         LET red: [fjnode[T] -> range] = reduce(consFjnode?_fun) IN
           CASES fjnode_adtvar
-            OF consFjnode(consFjnode1_var, consFjnode2_var,
-                          consFjnode3_var):
-                 consFjnode?_fun(consFjnode1_var,
-                                 map[fjnode[T], range]
-                                     (red)(consFjnode2_var),
-                                 consFjnode3_var)
+            OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
+                 consFjnode?_fun(consFjnode1_var, map[fjnode[T], range](red)(consFjnode2_var), consFjnode3_var)
             ENDCASES;
 
-  REDUCE(consFjnode?_fun:
-           [[T, list[range], boolean, fjnode[T]] -> range]):
-        [fjnode[T] -> range] =
+  REDUCE(consFjnode?_fun: [[T, list[range], boolean, fjnode[T]] -> range]):  [fjnode[T] -> range] =
       LAMBDA (fjnode_adtvar: fjnode[T]):
         LET red: [fjnode[T] -> range] = REDUCE(consFjnode?_fun) IN
           CASES fjnode_adtvar
-            OF consFjnode(consFjnode1_var, consFjnode2_var,
-                          consFjnode3_var):
-                 consFjnode?_fun(consFjnode1_var,
-                                 map[fjnode[T], range]
-                                     (red)(consFjnode2_var),
-                                 consFjnode3_var, fjnode_adtvar)
+            OF consFjnode(consFjnode1_var, consFjnode2_var, consFjnode3_var):
+                 consFjnode?_fun(consFjnode1_var, map[fjnode[T], range](red)(consFjnode2_var), consFjnode3_var, fjnode_adtvar)
             ENDCASES;
  END fjnode_adt_reduce
