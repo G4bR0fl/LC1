@@ -2,10 +2,10 @@
 Final project from Computational Logic 1 - 2018/1, turma B.
 
 #### Group Members
-Gabriel Bessa   16/012081
-Vitor Dullens  16/0148260
-Giovanni Guidini  16/0122660
-Diogo Pontes  16/0117992
+Gabriel Bessa   16/012081   
+Vitor Dullens  16/0148260   
+Giovanni Guidini  16/0122660   
+Diogo Pontes  16/0117992   
 
 ## Project
  Prove some results that the first phase of Ford Johnson's sorting algorithm *(aka merge-insertion sort)* using the proof assistant [PVS](http://pvs.csl.sri.com/). The formalizations use Gentzen's Sequent Calculus.
