@@ -1,7 +1,7 @@
 # Computational Logic 1
 Final project from Computational Logic 1 - 2018/1, turma B.
 
-####Group Members
+#### Group Members
 Gabriel Bessa   16/012081
 Vitor Dullens  16/0148260
 Giovanni Guidini  16/0122660
